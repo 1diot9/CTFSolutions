@@ -1,0 +1,16 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+package com.rctf;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RctfApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(RctfApplication.class, args);
+    }
+}

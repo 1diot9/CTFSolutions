@@ -1,0 +1,244 @@
+INFO  2025-01-31 14:20:21.958 [-main][*][o.noear.solon.Solon]: 
+App: Start loading
+INFO  2025-01-31 14:20:21.994 [-main][*][o.noear.solon.Solon]: 
+App: Plugin starting
+INFO  2025-01-31 14:20:22.045 [-main][*][o.noear.solon.Solon]: 
+Render mapping: @json=StringSerializerRender#snack3-json
+INFO  2025-01-31 14:20:22.046 [-main][*][o.noear.solon.Solon]: 
+Render mapping: @type_json=StringSerializerRender#snack3-json
+INFO  2025-01-31 14:20:22.047 [-main][*][o.noear.solon.Solon]: 
+Session: Local session state plugin is loaded
+INFO  2025-01-31 14:20:22.120 [-main][*][o.noear.solon.Solon]: 
+View: load: FreemarkerRender
+INFO  2025-01-31 14:20:22.120 [-main][*][o.noear.solon.Solon]: 
+View: load: org.noear.solon.view.freemarker.FreemarkerRender
+INFO  2025-01-31 14:20:22.120 [-main][*][o.noear.solon.Solon]: 
+Render mapping: .ftl=FreemarkerRender
+INFO  2025-01-31 14:20:22.122 [-main][*][o.noear.solon.Solon]: 
+App: Bean scanning
+INFO  2025-01-31 14:20:22.717 [-main][*][o.noear.solon.Solon]: 
+solon.connector:main: smarthttp: Started ServerConnector@{HTTP/1.1,[http/1.1]}{http://localhost:8081}
+INFO  2025-01-31 14:20:22.717 [-main][*][o.noear.solon.Solon]: 
+Server:main: smarthttp: Started (smart http 2.4/3.0.4.1) @569ms
+INFO  2025-01-31 14:20:22.718 [-main][*][o.noear.solon.Solon]: 
+App: End loading elapsed=1002ms pid=33708 v=3.0.4.1
+INFO  2025-01-31 14:26:51.863 [-Thread-1][*][o.noear.solon.Solon]: 
+Server:main: smarthttp: Has Stopped (smart http 2.4/3.0.4.1)
+INFO  2025-01-31 14:26:51.865 [-Thread-1][*][o.noear.solon.Solon]: 
+App: Stopped
+INFO  2025-01-31 16:15:57.391 [-main][*][o.noear.solon.Solon]: 
+App: Start loading
+INFO  2025-01-31 16:15:57.411 [-main][*][o.noear.solon.Solon]: 
+App: Plugin starting
+INFO  2025-01-31 16:15:57.446 [-main][*][o.noear.solon.Solon]: 
+Session: Local session state plugin is loaded
+INFO  2025-01-31 16:15:57.451 [-main][*][o.noear.solon.Solon]: 
+Render mapping: @json=StringSerializerRender#snack3-json
+INFO  2025-01-31 16:15:57.453 [-main][*][o.noear.solon.Solon]: 
+Render mapping: @type_json=StringSerializerRender#snack3-json
+INFO  2025-01-31 16:15:57.511 [-main][*][o.noear.solon.Solon]: 
+View: load: FreemarkerRender
+INFO  2025-01-31 16:15:57.511 [-main][*][o.noear.solon.Solon]: 
+View: load: org.noear.solon.view.freemarker.FreemarkerRender
+INFO  2025-01-31 16:15:57.511 [-main][*][o.noear.solon.Solon]: 
+Render mapping: .ftl=FreemarkerRender
+INFO  2025-01-31 16:15:57.512 [-main][*][o.noear.solon.Solon]: 
+App: Bean scanning
+INFO  2025-01-31 16:15:58.095 [-main][*][o.noear.solon.Solon]: 
+solon.connector:main: smarthttp: Started ServerConnector@{HTTP/1.1,[http/1.1]}{http://localhost:8081}
+INFO  2025-01-31 16:15:58.095 [-main][*][o.noear.solon.Solon]: 
+Server:main: smarthttp: Started (smart http 2.4/3.0.4.1) @563ms
+INFO  2025-01-31 16:15:58.095 [-main][*][o.noear.solon.Solon]: 
+App: End loading elapsed=918ms pid=39612 v=3.0.4.1
+WARN  2025-01-31 16:16:11.287 [-smarthttp-2][*][o.noear.solon.Solon]: 
+SolonApp tryHandle failed!
+java.lang.IllegalArgumentException: Last unit does not have enough valid bits
+	at java.util.Base64$Decoder.decode0(Base64.java:734)
+	at java.util.Base64$Decoder.decode(Base64.java:526)
+	at java.util.Base64$Decoder.decode(Base64.java:549)
+	at com.example.demo.controller.IndexController.hello(IndexController.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.noear.solon.core.wrap.MethodWrap.invoke(MethodWrap.java:269)
+	at org.noear.solon.core.wrap.MethodWrap.doIntercept(MethodWrap.java:258)
+	at org.noear.solon.core.aspect.InterceptorEntity.doIntercept(InterceptorEntity.java:55)
+	at org.noear.solon.core.aspect.Invocation.invoke(Invocation.java:115)
+	at org.noear.solon.core.wrap.MethodWrap.invokeByAspect(MethodWrap.java:284)
+	at org.noear.solon.core.mvc.ActionDefault.executeDo(ActionDefault.java:395)
+	at org.noear.solon.core.mvc.ActionDefault.invokeMethodDo(ActionDefault.java:327)
+	at org.noear.solon.core.mvc.ActionDefault.invokeHandleDo(ActionDefault.java:304)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invokeFilterDo(ActionDefault.java:296)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invoke(ActionDefault.java:270)
+	at org.noear.solon.core.mvc.ActionDefault.handle(ActionDefault.java:247)
+	at org.noear.solon.core.route.RouterHandler.handleMain(RouterHandler.java:51)
+	at org.noear.solon.core.route.RouterHandler.handle1(RouterHandler.java:71)
+	at org.noear.solon.core.route.RouterInterceptorChainImpl.doIntercept(RouterInterceptorChainImpl.java:54)
+	at org.noear.solon.core.ChainManager.doIntercept(ChainManager.java:199)
+	at org.noear.solon.core.route.RouterHandler.handle(RouterHandler.java:102)
+	at org.noear.solon.core.handle.HandlerPipeline.handle(HandlerPipeline.java:53)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.logging.integration.XPluginImp.lambda$start$1(XPluginImp.java:71)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:49)
+	at org.noear.solon.core.ChainManager.doFilter(ChainManager.java:106)
+	at org.noear.solon.SolonApp.tryHandle(SolonApp.java:503)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handleDo(SmHttpContextHandler.java:122)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handle0(SmHttpContextHandler.java:100)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.lambda$handle$0(SmHttpContextHandler.java:85)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  2025-01-31 16:16:22.311 [-smarthttp-3][*][o.noear.solon.Solon]: 
+SolonApp tryHandle failed!
+java.lang.IllegalArgumentException: Last unit does not have enough valid bits
+	at java.util.Base64$Decoder.decode0(Base64.java:734)
+	at java.util.Base64$Decoder.decode(Base64.java:526)
+	at java.util.Base64$Decoder.decode(Base64.java:549)
+	at com.example.demo.controller.IndexController.hello(IndexController.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.noear.solon.core.wrap.MethodWrap.invoke(MethodWrap.java:269)
+	at org.noear.solon.core.wrap.MethodWrap.doIntercept(MethodWrap.java:258)
+	at org.noear.solon.core.aspect.InterceptorEntity.doIntercept(InterceptorEntity.java:55)
+	at org.noear.solon.core.aspect.Invocation.invoke(Invocation.java:115)
+	at org.noear.solon.core.wrap.MethodWrap.invokeByAspect(MethodWrap.java:284)
+	at org.noear.solon.core.mvc.ActionDefault.executeDo(ActionDefault.java:395)
+	at org.noear.solon.core.mvc.ActionDefault.invokeMethodDo(ActionDefault.java:327)
+	at org.noear.solon.core.mvc.ActionDefault.invokeHandleDo(ActionDefault.java:304)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invokeFilterDo(ActionDefault.java:296)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invoke(ActionDefault.java:270)
+	at org.noear.solon.core.mvc.ActionDefault.handle(ActionDefault.java:247)
+	at org.noear.solon.core.route.RouterHandler.handleMain(RouterHandler.java:51)
+	at org.noear.solon.core.route.RouterHandler.handle1(RouterHandler.java:71)
+	at org.noear.solon.core.route.RouterInterceptorChainImpl.doIntercept(RouterInterceptorChainImpl.java:54)
+	at org.noear.solon.core.ChainManager.doIntercept(ChainManager.java:199)
+	at org.noear.solon.core.route.RouterHandler.handle(RouterHandler.java:102)
+	at org.noear.solon.core.handle.HandlerPipeline.handle(HandlerPipeline.java:53)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.logging.integration.XPluginImp.lambda$start$1(XPluginImp.java:71)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:49)
+	at org.noear.solon.core.ChainManager.doFilter(ChainManager.java:106)
+	at org.noear.solon.SolonApp.tryHandle(SolonApp.java:503)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handleDo(SmHttpContextHandler.java:122)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handle0(SmHttpContextHandler.java:100)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.lambda$handle$0(SmHttpContextHandler.java:85)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  2025-01-31 16:17:07.371 [-smarthttp-4][*][o.noear.solon.Solon]: 
+SolonApp tryHandle failed!
+java.lang.IllegalArgumentException: Last unit does not have enough valid bits
+	at java.util.Base64$Decoder.decode0(Base64.java:734)
+	at java.util.Base64$Decoder.decode(Base64.java:526)
+	at java.util.Base64$Decoder.decode(Base64.java:549)
+	at com.example.demo.controller.IndexController.hello(IndexController.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.noear.solon.core.wrap.MethodWrap.invoke(MethodWrap.java:269)
+	at org.noear.solon.core.wrap.MethodWrap.doIntercept(MethodWrap.java:258)
+	at org.noear.solon.core.aspect.InterceptorEntity.doIntercept(InterceptorEntity.java:55)
+	at org.noear.solon.core.aspect.Invocation.invoke(Invocation.java:115)
+	at org.noear.solon.core.wrap.MethodWrap.invokeByAspect(MethodWrap.java:284)
+	at org.noear.solon.core.mvc.ActionDefault.executeDo(ActionDefault.java:395)
+	at org.noear.solon.core.mvc.ActionDefault.invokeMethodDo(ActionDefault.java:327)
+	at org.noear.solon.core.mvc.ActionDefault.invokeHandleDo(ActionDefault.java:304)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invokeFilterDo(ActionDefault.java:296)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invoke(ActionDefault.java:270)
+	at org.noear.solon.core.mvc.ActionDefault.handle(ActionDefault.java:247)
+	at org.noear.solon.core.route.RouterHandler.handleMain(RouterHandler.java:51)
+	at org.noear.solon.core.route.RouterHandler.handle1(RouterHandler.java:71)
+	at org.noear.solon.core.route.RouterInterceptorChainImpl.doIntercept(RouterInterceptorChainImpl.java:54)
+	at org.noear.solon.core.ChainManager.doIntercept(ChainManager.java:199)
+	at org.noear.solon.core.route.RouterHandler.handle(RouterHandler.java:102)
+	at org.noear.solon.core.handle.HandlerPipeline.handle(HandlerPipeline.java:53)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.logging.integration.XPluginImp.lambda$start$1(XPluginImp.java:71)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:49)
+	at org.noear.solon.core.ChainManager.doFilter(ChainManager.java:106)
+	at org.noear.solon.SolonApp.tryHandle(SolonApp.java:503)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handleDo(SmHttpContextHandler.java:122)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handle0(SmHttpContextHandler.java:100)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.lambda$handle$0(SmHttpContextHandler.java:85)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  2025-01-31 16:17:30.803 [-smarthttp-5][*][o.noear.solon.Solon]: 
+SolonApp tryHandle failed!
+com.alibaba.fastjson.JSONException: write javaBean error, fastjson version 1.2.83, class org.h2.jdbc.JdbcConnection, fieldName : connection, write javaBean error, fastjson version 1.2.83, class org.h2.jdbc.JdbcDatabaseMetaData, fieldName : metaData, Feature not supported: "cursorName" [50100-224]
+	at com.alibaba.fastjson.serializer.JavaBeanSerializer.write(JavaBeanSerializer.java:541)
+	at com.alibaba.fastjson.serializer.JavaBeanSerializer.write(JavaBeanSerializer.java:154)
+	at com.alibaba.fastjson.serializer.JSONSerializer.writeWithFieldName(JSONSerializer.java:360)
+	at com.alibaba.fastjson.serializer.ASMSerializer_1_UnpooledDataSource.write(Unknown Source)
+	at com.alibaba.fastjson.serializer.MapSerializer.write(MapSerializer.java:271)
+	at com.alibaba.fastjson.serializer.MapSerializer.write(MapSerializer.java:44)
+	at com.alibaba.fastjson.serializer.JSONSerializer.write(JSONSerializer.java:312)
+	at com.alibaba.fastjson.JSON.toJSONString(JSON.java:1077)
+	at com.alibaba.fastjson.JSON.toString(JSON.java:1071)
+	at com.example.demo.controller.IndexController.hello(IndexController.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.noear.solon.core.wrap.MethodWrap.invoke(MethodWrap.java:269)
+	at org.noear.solon.core.wrap.MethodWrap.doIntercept(MethodWrap.java:258)
+	at org.noear.solon.core.aspect.InterceptorEntity.doIntercept(InterceptorEntity.java:55)
+	at org.noear.solon.core.aspect.Invocation.invoke(Invocation.java:115)
+	at org.noear.solon.core.wrap.MethodWrap.invokeByAspect(MethodWrap.java:284)
+	at org.noear.solon.core.mvc.ActionDefault.executeDo(ActionDefault.java:395)
+	at org.noear.solon.core.mvc.ActionDefault.invokeMethodDo(ActionDefault.java:327)
+	at org.noear.solon.core.mvc.ActionDefault.invokeHandleDo(ActionDefault.java:304)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invokeFilterDo(ActionDefault.java:296)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.core.mvc.ActionDefault.invoke(ActionDefault.java:270)
+	at org.noear.solon.core.mvc.ActionDefault.handle(ActionDefault.java:247)
+	at org.noear.solon.core.route.RouterHandler.handleMain(RouterHandler.java:51)
+	at org.noear.solon.core.route.RouterHandler.handle1(RouterHandler.java:71)
+	at org.noear.solon.core.route.RouterInterceptorChainImpl.doIntercept(RouterInterceptorChainImpl.java:54)
+	at org.noear.solon.core.ChainManager.doIntercept(ChainManager.java:199)
+	at org.noear.solon.core.route.RouterHandler.handle(RouterHandler.java:102)
+	at org.noear.solon.core.handle.HandlerPipeline.handle(HandlerPipeline.java:53)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:51)
+	at org.noear.solon.logging.integration.XPluginImp.lambda$start$1(XPluginImp.java:71)
+	at org.noear.solon.core.handle.FilterChainImpl.doFilter(FilterChainImpl.java:49)
+	at org.noear.solon.core.ChainManager.doFilter(ChainManager.java:106)
+	at org.noear.solon.SolonApp.tryHandle(SolonApp.java:503)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handleDo(SmHttpContextHandler.java:122)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.handle0(SmHttpContextHandler.java:100)
+	at org.noear.solon.boot.smarthttp.http.SmHttpContextHandler.lambda$handle$0(SmHttpContextHandler.java:85)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.alibaba.fastjson.JSONException: write javaBean error, fastjson version 1.2.83, class org.h2.jdbc.JdbcDatabaseMetaData, fieldName : metaData, Feature not supported: "cursorName" [50100-224]
+	at com.alibaba.fastjson.serializer.JavaBeanSerializer.write(JavaBeanSerializer.java:541)
+	at com.alibaba.fastjson.serializer.JavaBeanSerializer.write(JavaBeanSerializer.java:154)
+	at com.alibaba.fastjson.serializer.FieldSerializer.writeValue(FieldSerializer.java:318)
+	at com.alibaba.fastjson.serializer.JavaBeanSerializer.write(JavaBeanSerializer.java:472)
+	... 43 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "cursorName" [50100-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:568)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.message.TraceObject.unsupported(TraceObject.java:397)
+	at org.h2.jdbc.JdbcResultSet.getCursorName(JdbcResultSet.java:2854)
+	at com.alibaba.fastjson.serializer.ASMSerializer_2_JdbcResultSet.write(Unknown Source)
+	at com.alibaba.fastjson.serializer.FieldSerializer.writeValue(FieldSerializer.java:318)
+	at com.alibaba.fastjson.serializer.JavaBeanSerializer.write(JavaBeanSerializer.java:472)
+	... 46 common frames omitted
+INFO  2025-01-31 16:21:08.527 [-Thread-1][*][o.noear.solon.Solon]: 
+Server:main: smarthttp: Has Stopped (smart http 2.4/3.0.4.1)
+INFO  2025-01-31 16:21:08.529 [-Thread-1][*][o.noear.solon.Solon]: 
+App: Stopped

@@ -1,0 +1,12 @@
+{
+{
+  "@type": "java.lang.Exception",
+  "@type": "com.fasterxml.jackson.core.JsonGenerationException",
+  "g":{}
+},
+{
+"@type": "com.fasterxml.jackson.core.JsonGenerator",
+"@type": "com.fasterxml.jackson.core.json.UTF8JsonGenerator",
+"out":{}
+}
+}

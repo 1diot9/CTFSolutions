@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+MHGA (Make Hessian Great Again) - 完整依赖列表
+
+原始 Jar: Databricks Spark JDBC 42 Driver (SparkJDBC42)
+JDK 版本: 11
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ctf.challenge</groupId>
+    <artifactId>mhga-deps</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <name>MHGA Dependencies</name>
+    <description>Complete dependency list for MHGA CTF challenge</description>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 依赖版本 -->
+        <hessian.version>4.0.66</hessian.version>
+        <httpclient.version>4.5.14</httpclient.version>
+        <httpcore.version>4.4.16</httpcore.version>
+        <jackson.version>2.16.0</jackson.version>
+        <guava.version>30.1.1-jre</guava.version>
+        <netty.version>4.1.86.Final</netty.version>
+        <bytebuddy.version>1.14.5</bytebuddy.version>
+        <arrow.version>9.0.0</arrow.version>
+        <log4j.version>2.20.0</log4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <gson.version>2.10.1</gson.version>
+        <commons-codec.version>1.11</commons-codec.version>
+        <commons-cli.version>1.4</commons-cli.version>
+        <nimbus-jose.version>9.37.2</nimbus-jose.version>
+        <vibur.version>26.0</vibur.version>
+    </properties>
+
+    <dependencies>
+        <!-- ========================================================== -->
+        <!-- 核心攻击面依赖                                            -->
+        <!-- ========================================================== -->
+
+        <!-- Hessian - 主要攻击向量 -->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>${hessian.version}</version>
+        </dependency>
+
+        <!-- Jackson - JSON 序列化/反序列化 (潜在 gadget) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- Guava - Google 核心库 (潜在 gadget) -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- Byte Buddy - 字节码操作 (潜在 gadget) -->
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>${bytebuddy.version}</version>
+        </dependency>
+
+        <!-- Commons Codec - 编解码 (配合其他利用链) -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+
+        <!-- ========================================================== -->
+        <!-- 网络/HTTP 依赖                                             -->
+        <!-- ========================================================== -->
+
+        <!-- Apache HttpClient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+
+        <!-- Apache HttpCore -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${httpcore.version}</version>
+        </dependency>
+
+        <!-- Netty - 网络框架 -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-common</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-buffer</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+        <!-- Netty 其他模块可能需要 -->
+
+        <!-- ========================================================== -->
+        <!-- 序列化/数据处理依赖                                        -->
+        <!-- ========================================================== -->
+
+        <!-- Gson - JSON 库 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
+        <!-- Apache Arrow - 列式存储 -->
+        <dependency>
+            <groupId>org.apache.arrow</groupId>
+            <artifactId>arrow-vector</artifactId>
+            <version>${arrow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.arrow</groupId>
+            <artifactId>arrow-memory-core</artifactId>
+            <version>${arrow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.arrow</groupId>
+            <artifactId>arrow-memory-netty</artifactId>
+            <version>${arrow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.arrow</groupId>
+            <artifactId>arrow-memory-unsafe</artifactId>
+            <version>${arrow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.arrow</groupId>
+            <artifactId>arrow-format</artifactId>
+            <version>${arrow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.arrow</groupId>
+            <artifactId>arrow-compression</artifactId>
+            <version>${arrow.version}</version>
+        </dependency>
+
+        <!-- FlatBuffers -->
+        <dependency>
+            <groupId>com.google.flatbuffers</groupId>
+            <artifactId>flatbuffers-java</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+
+        <!-- Nimbus JOSE+JWT - JWT 处理 -->
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>${nimbus-jose.version}</version>
+        </dependency>
+
+        <!-- ========================================================== -->
+        <!-- 日志依赖                                                   -->
+        <!-- ========================================================== -->
+
+        <!-- Log4j -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <!-- SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- Commons Logging -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!-- ========================================================== -->
+        <!-- 工具库依赖                                                 -->
+        <!-- ========================================================== -->
+
+        <!-- Commons CLI -->
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>${commons-cli.version}</version>
+        </dependency>
+
+        <!-- Vibur DBCP - 数据库连接池 -->
+        <dependency>
+            <groupId>org.vibur</groupId>
+            <artifactId>vibur-dbcp</artifactId>
+            <version>${vibur.version}</version>
+        </dependency>
+
+        <!-- JCTools - 并发工具 -->
+        <dependency>
+            <groupId>org.jctools</groupId>
+            <artifactId>jctools-core</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <!-- ========================================================== -->
+        <!-- 注解/编译依赖                                              -->
+        <!-- ========================================================== -->
+
+        <!-- JSR305 Annotations -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+        <!-- JCIP Annotations -->
+        <dependency>
+            <groupId>com.github.stephenc.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <version>1.0-1</version>
+        </dependency>
+
+        <!-- Error Prone Annotations -->
+        <dependency>
+            <groupId>com.google.errorprone</groupId>
+            <artifactId>error_prone_annotations</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <!-- J2ObjC Annotations -->
+        <dependency>
+            <groupId>com.google.j2objc</groupId>
+            <artifactId>j2objc-annotations</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+        <!-- Guava 子组件 (通过 Guava 传递引入) -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>failureaccess</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>listenablefuture</artifactId>
+            <version>9999.0-empty-to-avoid-conflict-with-guava</version>
+        </dependency>
+
+        <!-- ========================================================== -->
+        <!-- CTF 利用工具依赖 (可选)                                    -->
+        <!-- ========================================================== -->
+
+        <!-- ROME - 用于 Hessian gadget 链 -->
+        <!--
+        <dependency>
+            <groupId>rome</groupId>
+            <artifactId>rome</artifactId>
+            <version>1.0</version>
+        </dependency>
+        -->
+
+        <!-- CommonsCollections - 用于 gadget 链 -->
+        <!--
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        -->
+
+        <!-- LDAP 服务器 - 用于 JNDI 注入测试 -->
+        <!--
+        <dependency>
+            <groupId>com.unboundid</groupId>
+            <artifactId>unboundid-ldapsdk</artifactId>
+            <version>6.0.11</version>
+        </dependency>
+        -->
+
+    </dependencies>
+
+    <!-- ========================================================== -->
+    <!-- 依赖管理 (可选)                                             -->
+    <!-- ========================================================== -->
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 可以在这里统一管理版本 -->
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

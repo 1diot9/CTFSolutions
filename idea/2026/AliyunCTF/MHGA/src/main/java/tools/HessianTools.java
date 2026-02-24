@@ -44,12 +44,12 @@ public class HessianTools {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             Hessian2Output hessian2Output = new Hessian2Output(baos);
 
-            SerializerFactory serializerFactory = new SerializerFactory();
+            SerializerFactory serializerFactory = hessian2Output.getSerializerFactory();
             serializerFactory.setAllowNonSerializable(true);
             hessian2Output.setSerializerFactory(serializerFactory);
 
             hessian2Output.writeObject(obj);
-            hessian2Output.close();
+            hessian2Output.flush();
             return baos.toByteArray();
         }
         return null;

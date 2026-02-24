@@ -5,12 +5,8 @@ import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtField;
 
-import javax.swing.undo.CompoundEdit;
 import java.io.*;
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
+import java.lang.reflect.*;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.TreeMap;
@@ -77,7 +73,7 @@ public class ReflectTools {
         return null;
     }
 
-    public static HashMap<Object, Object> makeMap (Object v1, Object v2 ) throws Exception {
+    public static HashMap<Object, Object> makeMap1(Object v1, Object v2 ) throws Exception {
         HashMap<Object, Object> s = new HashMap<>();
         setFieldValue(s, "size", 2);
         Class<?> nodeC;
@@ -94,6 +90,15 @@ public class ReflectTools {
         Array.set(tbl, 1, nodeCons.newInstance(0, v2, v2, null));
         setFieldValue(s, "table", tbl);
         return s;
+    }
+
+    private static HashMap<Object, Object> makeMap2(Object v1, Object v2) throws Exception {
+        HashMap<Object, Object> map = new HashMap<>();
+        Method putValMethod = HashMap.class.getDeclaredMethod("putVal", int.class, Object.class, Object.class, boolean.class, boolean.class);
+        putValMethod.setAccessible(true);
+        putValMethod.invoke(map, 0, v1, 123, false, true);
+        putValMethod.invoke(map, 1, v2, 123, false, true);
+        return map;
     }
 
     /**
@@ -129,7 +134,7 @@ public class ReflectTools {
         hashMap2.put("zZ", param);
         hashMap2.put("yy", called);
 
-        HashMap<Object, Object> finalMap = makeMap(hashMap2, hashMap1);
+        HashMap<Object, Object> finalMap = makeMap1(hashMap2, hashMap1);
 
         return finalMap;
     }

